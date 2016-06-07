@@ -3,6 +3,7 @@ public class J002Throw {
 	public static void main(String[] args) {
 		
 		System.out.println(getAreaValue(-3, 10));
+		System.out.println("Continuation of the code");
 	}
 	
 	public static int getAreaValue(int a, int b){
