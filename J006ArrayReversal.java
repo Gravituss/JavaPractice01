@@ -11,7 +11,6 @@ public class J006ArrayReversal {
 		arrayRev(array, array2, array3, array4);
 	}
 	
-	
 	public static void arrayRev(int[]... a){
 		
 		for (int[] mas: a){
