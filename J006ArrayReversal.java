@@ -7,28 +7,29 @@ public class J006ArrayReversal {
 		int array2 [] = new int[]{};
 		int array3 [] = new int[]{8};
 		int array4 [] = new int[]{3, 88, -55};
+		int array5 [] = new int[]{4, 0, 5, 444};
 		
-		arrayRev(array, array2, array3, array4);
+		arrayRev(array, array2, array3, array4, array5);
 	}
 	
 	public static void arrayRev(int[]... a){
 		
-		for (int[] mas: a){
-			if (mas == null){
+		for (int[] arr: a){
+			if (arr == null){
 				System.out.println("null --> null");
 				continue;
 			} else{
-				int len = mas.length;
-				printArray(mas);
+				int len = arr.length;
+				printArray(arr);
 				for (int i = 0; i < len ; i++ ){
 					if (i < len/2){
-						int tmp = mas[i];
-						mas[i] = mas[len-i-1];
-						mas[len-i-1] = tmp;
+						int tmp = arr[i];
+						arr[i] = arr[len-i-1];
+						arr[len-i-1] = tmp;
 					}
 				}
 				System.out.print(" --> ");
-				printArray(mas);
+				printArray(arr);
 				System.out.println("");
 			}
 		}

@@ -42,7 +42,7 @@ public class J007CurrencyExchange {
 		if(currFrom.equals(currTo)){
 			System.out.println("Your currency is already fine");
 		} else {
-			System.out.print("You got " /*+ currTo*/);
+			System.out.print("You got ");
 			System.out.printf("%.2f", amount);
 			System.out.print(" " + currTo);
 		}
