@@ -32,17 +32,12 @@ public class J007CurrencyExchange {
 	
 	public static void outputBlock(){
 		
-		int amountInt = (int) (amount*100);
-		String amountStr = String.valueOf(amountInt);
-		
-		amountStr = amountStr.substring(0, (amountStr.length() - 2)) + "." + 
-				amountStr.substring(((amountStr.length()) - 2), amountStr.length());
-		
 		if(currFrom.equals(currTo)){
 			System.out.println("Your currency is already fine");
 		} else {
-			System.out.println("You got " + amountStr +
-					 " " + currTo);
+			System.out.print("You got " /*+ currTo*/);
+			System.out.printf("%.2f", amount);
+			System.out.print(" " + currTo);
 		}
 	}
 	
