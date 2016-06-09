@@ -11,11 +11,18 @@ public class J007CurrencyExchange {
 	
 	public static void main(String[] args) {
 		
+		printRates();
 		inputBlock();
-		
 		conversion();
-
 		outputBlock();
+	}
+	
+	public static void printRates(){
+		System.out.printf("%-9s%-7s%-9s%n", "We buy", " ", "We sell");
+		System.out.println("--------------------------");
+		System.out.printf("%-9s%-7s%-9s%n", rate_usd_uah[0] , "USD", rate_usd_uah[1]);
+		System.out.printf("%-9s%-7s%-9s%n", rate_eur_uah[0] , "EUR", rate_eur_uah[1]);
+		System.out.println("--------------------------");
 	}
 
 	public static void inputBlock(){	
