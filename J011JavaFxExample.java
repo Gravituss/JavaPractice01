@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 
 public class J011JavaFxExample extends Application {
 
+	Button button;
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -16,7 +18,7 @@ public class J011JavaFxExample extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("Window title");
-		Button button = new Button();
+		button = new Button();
 		button.setText("Quit");
 		
 		StackPane layout = new StackPane();
@@ -25,6 +27,13 @@ public class J011JavaFxExample extends Application {
 		Scene scene = new Scene(layout, 300, 150);
 		primaryStage.setScene(scene);
 		primaryStage.show();
+	}
+	
+	@Override
+	public void handle(ActionEvent event){
+		if (event.getSource() == button){
+			System.out.println("You did that!");
+		}
 	}
 
 }
