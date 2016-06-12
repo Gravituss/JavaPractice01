@@ -7,7 +7,8 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 
-public class J011JavaFxExample extends Application {
+public class J011JavaFxExample extends Application 
+	implements EventHandler<ActionEvent> {
 
 	Button button;
 	
