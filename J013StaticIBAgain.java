@@ -6,8 +6,8 @@ public class J013StaticIBAgain {
 	}	
 	int i;
 	
-	
 	public static void main(String[] args) {
+		
 		System.out.println("----------");
 		J013StaticIBAgain a = new J013StaticIBAgain();
 		J013StaticIBAgain b = new J013StaticIBAgain();
@@ -16,6 +16,5 @@ public class J013StaticIBAgain {
 		
 		System.out.println("i = " + a.i);
 		System.out.println("i = " + b.i);
-		
 	}
 }
