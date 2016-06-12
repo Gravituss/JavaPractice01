@@ -1,3 +1,4 @@
+package simple;
 
 public class J012StringString {
 	public static void main(String[] args) {

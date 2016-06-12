@@ -1,3 +1,5 @@
+package simple;
+
 public class J002Throw {
 
 	public static void main(String[] args) {

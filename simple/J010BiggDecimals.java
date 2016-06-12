@@ -1,3 +1,5 @@
+package simple;
+
 import java.math.BigDecimal;
 
 public class J010BiggDecimals {

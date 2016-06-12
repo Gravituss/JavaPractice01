@@ -1,3 +1,4 @@
+package simple;
 
 public class J014ParseInt {
 	public static void main(String[] args) {
@@ -7,5 +8,4 @@ public class J014ParseInt {
 			System.out.println(pp);
 		}
 	}
-	
 }

@@ -1,3 +1,4 @@
+package simple;
 
 public class J005SomeClass {
 

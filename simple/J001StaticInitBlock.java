@@ -1,3 +1,5 @@
+package simple;
+
 public class J001StaticInitBlock {
 
 	private static int i;

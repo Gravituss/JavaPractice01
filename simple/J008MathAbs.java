@@ -1,5 +1,6 @@
+package simple;
 
-public class J008Module {
+public class J008MathAbs {
 
 	public static void main(String[] args) {
 		
