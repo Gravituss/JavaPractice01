@@ -1,6 +1,8 @@
 
 public class J006ArrayReversal {
 
+	// This program reverses arrays initialized in the main method 
+	// and prints both initial and reversed arrays in pairs:
 	public static void main(String[] args) {
 		
 		int array [] = null;
@@ -9,10 +11,12 @@ public class J006ArrayReversal {
 		int array4 [] = new int[]{3, 88, -55};
 		int array5 [] = new int[]{4, 0, 5, 444};
 		
-		arrayRev(array, array2, array3, array4, array5);
+		arrayReverse(array, array2, array3, array4, array5);
 	}
 	
-	public static void arrayRev(int[]... a){
+	// This method reverses arrays given as arguments and prints arrays
+	// with the help of printArray() method realized after this method:
+	public static void arrayReverse(int[]... a){
 		
 		for (int[] arr: a){
 			if (arr == null){
@@ -35,6 +39,7 @@ public class J006ArrayReversal {
 		}
 	}
 	
+	// This method prints given array by template {7, 8, 9, 10}
 	public static void printArray(int[] arr){
 		
 		System.out.print("{");		
@@ -44,5 +49,4 @@ public class J006ArrayReversal {
 		}
 		System.out.print("}");		
 	}
-
 }
