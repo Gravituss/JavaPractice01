@@ -6,8 +6,8 @@ public class J007CurrencyExchange {
 	static String currFrom, currTo;
 	static double amount;
 	
-	static double [] rate_usd_uah = {25, 25.3};
-	static double [] rate_eur_uah = {27, 27.8};
+	static double [] rateUsdUah = {25, 25.3};
+	static double [] rateEurUah = {27, 27.8};
 	
 	public static void main(String[] args) {
 		
@@ -20,8 +20,8 @@ public class J007CurrencyExchange {
 	public static void printRates(){
 		System.out.printf("%-9s%-7s%-9s%n", "We buy", " ", "We sell");
 		System.out.println("--------------------------");
-		System.out.printf("%-9s%-7s%-9s%n", rate_usd_uah[0] , "USD", rate_usd_uah[1]);
-		System.out.printf("%-9s%-7s%-9s%n", rate_eur_uah[0] , "EUR", rate_eur_uah[1]);
+		System.out.printf("%-9s%-7s%-9s%n", rateUsdUah[0] , "USD", rateUsdUah[1]);
+		System.out.printf("%-9s%-7s%-9s%n", rateEurUah[0] , "EUR", rateEurUah[1]);
 		System.out.println("--------------------------");
 	}
 
@@ -51,30 +51,30 @@ public class J007CurrencyExchange {
 	public static void conversion(){
 		if(currFrom.equals("UAH")){
 			if(currTo.equals("USD")){
-				amount = amount/rate_usd_uah[1];
+				amount = amount/rateUsdUah[1];
 			}
 			if(currTo.equals("EUR")){
-				amount = amount/rate_eur_uah[1];
+				amount = amount/rateEurUah[1];
 			}			
 		}
 		
 		if(currFrom.equals("USD")){
 			if(currTo.equals("UAH")){
-				amount = amount*rate_usd_uah[0];
+				amount = amount*rateUsdUah[0];
 			}
 			if(currTo.equals("EUR")){
-				amount = amount*rate_usd_uah[0];
-				amount = amount/rate_eur_uah[1];
+				amount = amount*rateUsdUah[0];
+				amount = amount/rateEurUah[1];
 			}			
 		}		
 		
 		if(currFrom.equals("EUR")){
 			if(currTo.equals("UAH")){
-				amount = amount*rate_eur_uah[0];
+				amount = amount*rateEurUah[0];
 			}
 			if(currTo.equals("USD")){
-				amount = amount*rate_eur_uah[0];
-				amount = amount/rate_usd_uah[1];				
+				amount = amount*rateEurUah[0];
+				amount = amount/rateUsdUah[1];				
 			}				
 		}		
 	}
