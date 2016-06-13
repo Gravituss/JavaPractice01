@@ -17,13 +17,18 @@ public class J015CompareSpeed {
 	int[] i = new int[numberOfElements];
 
 	
-
+	// Filling array of an instance of the class with values:
 	public void fillArrayWithData(int[] i){
 		for(int p = 0; p < i.length; p++){
 			i[p] = new Integer(valueOfElements);
 		}
 	}
 	
+	
+	/* Shifting all values of an array with the bitwise operator <<
+	 * 	Additionally, this method is charged by using shiftLeftRight()
+	 *  method (for the sake of increasing the delay):
+	 */
 	public void shiftLeft(int[] i){
 		
 		for(int p = 0; p < i.length; p++){
@@ -40,12 +45,21 @@ public class J015CompareSpeed {
 		}		
 	}
 	
+	/* This method uses 2 opposite shift bitwise operators
+	 *  (for the sake of increasing the delay):
+	 */
+	
 	public int shiftLeftRight(int j){
 
 		j = new Integer(j << 3);
 		j = new Integer(j >> 3);
 		return j;
 	}
+	
+	/* This method multiplies each value of an int[] array, but also
+	 * this method is charged by multiplyAndDivide() method
+	 * (for the sake of increasing the delay):
+	 */
 	
 	public void multiply(int[] i){
 		
@@ -62,6 +76,10 @@ public class J015CompareSpeed {
 		}		
 	}
 	
+	/* This method uses 2 opposite operations: multiplying and
+	 * dividing, which gives the same value in result, but 
+	 * increases the delay: 
+	 */
 	public int multiplyAndDivide(int j){
 		
 		j = new Integer(j * 8);
@@ -69,28 +87,26 @@ public class J015CompareSpeed {
 		return j;
 	}
 
+	
 	public static void main(String[] args) {
 		
-		
-		
+		// We instantiate 2 objects of the class
 		J015CompareSpeed arrForBits = new J015CompareSpeed();
-		arrForBits.fillArrayWithData(arrForBits.i);
-
-		
-		
-		
-		
-		
 		J015CompareSpeed arrForMultiplying = new J015CompareSpeed();
+		
+		// We fill array of each object with data
+		arrForBits.fillArrayWithData(arrForBits.i);
 		arrForMultiplying.fillArrayWithData(arrForMultiplying.i);
 
+		// Bitwise shifting:
+		System.out.println("Start shifting...");
+		arrForBits.shiftLeft(arrForBits.i);
 		
+		// Multiplying:
+		System.out.println("Start multiplying...");
+		arrForMultiplying.multiply(arrForMultiplying.i);
 		
-		
-		
-		
-		System.out.println("arrForBits.value15 = " + arrForBits.i[15]);
-		System.out.println("arrForMultiplying.value15 = " + arrForMultiplying.i[15]);
+		System.out.println("Done");
 	}
 }	
 
@@ -98,20 +114,5 @@ public class J015CompareSpeed {
 
 
 
-
-//	public void shiftLeftByThree(int[]ii){
-//	for(int value: ii){
-//		value = value << 3;
-//		System.out.println("value before = " + value);
-//	
-//		boolean once = false;
-//		if(!once){
-//			System.out.println("value after = " + value);
-//			once = true;
-//			System.exit(0);
-//		}
-//	}
-//}	
-//	static int numberOfElements = 20_000_000;	
 
 
