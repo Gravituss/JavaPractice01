@@ -10,9 +10,10 @@ public class J015CompareSpeed {
 		System.out.println("Start");
 	}
 	
+	String instanceName;
 	static int valueOfElements = 5;
 	static int numberOfElements = 20_000;
-	static long [] additionalCycle = {200, 201};
+	static long [] additionalCycle = {90, 251};
 
 	int[] i = new int[numberOfElements];
 
@@ -86,7 +87,6 @@ public class J015CompareSpeed {
 		j = new Integer(j / 8);
 		return j;
 	}
-
 	
 	public static void main(String[] args) {
 		
@@ -107,6 +107,8 @@ public class J015CompareSpeed {
 		arrForMultiplying.multiply(arrForMultiplying.i);
 		
 		System.out.println("Done");
+		System.out.println("arrForBits: i[23]= " + "\t" + arrForBits.i[23]);
+		System.out.println("arrForMultiplying: i[23]= " + "\t" + arrForMultiplying.i[23]);
 	}
 }	
 
