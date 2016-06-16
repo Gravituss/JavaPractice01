@@ -1,7 +1,7 @@
 
 /** The point of this program is to see time difference between 
 * 	calculating k<<3 and k*8
-* 	This program is not ready yet.
+* 	
 */	
 
 public class J015CompareSpeed {
@@ -10,10 +10,10 @@ public class J015CompareSpeed {
 		System.out.println("Start");
 	}
 	
-	String instanceName;
 	static int valueOfElements = 5;
 	static int numberOfElements = 20_000;
-	static long [] additionalCycle = {90, 251};
+	static int additionalCycle = 4000;
+	static long multiplyingTook, shiftingTook;
 
 	int[] i = new int[numberOfElements];
 
@@ -25,7 +25,6 @@ public class J015CompareSpeed {
 		}
 	}
 	
-	
 	/* Shifting all values of an array with the bitwise operator <<
 	 * 	Additionally, this method is charged by using shiftLeftRight()
 	 *  method (for the sake of increasing the delay):
@@ -34,12 +33,8 @@ public class J015CompareSpeed {
 		
 		for(int p = 0; p < i.length; p++){
 			
-			for(long q = 1; q < additionalCycle[0]; q++){
+			for(int q = 1; q < additionalCycle; q++){
 				i[p] = shiftLeftRight(i[p]);
-	
-				for(long qq = 1; qq < additionalCycle[1]; qq++){
-					i[p] = shiftLeftRight(i[p]);				
-				}
 			}
 			
 			i[p] = new Integer(i[p] << 3);			
@@ -66,11 +61,8 @@ public class J015CompareSpeed {
 		
 		for(int p = 0; p < i.length; p++){
 			
-			for(long q = 1; q < additionalCycle[0]; q++){
+			for(int q = 1; q < additionalCycle; q++){
 				i[p] = multiplyAndDivide(i[p]);
-				for(long qq = 1; qq < additionalCycle[1]; qq++){
-					i[p] = multiplyAndDivide(i[p]);					
-				}				
 			}			
 						
 			i[p] = new Integer(i[p] * 8);
@@ -88,6 +80,23 @@ public class J015CompareSpeed {
 		return j;
 	}
 	
+	// This method prints the result of our research
+	public static void outcome(){
+		
+		double multiplyingD = multiplyingTook;
+		double shiftingD = shiftingTook;
+		
+		if(multiplyingTook >= shiftingTook){
+			System.out.print("Shifting was faster by ");
+			System.out.printf("%.3f", 100*(-1 + multiplyingD/shiftingD));
+			System.out.print(" %");
+		} else {
+			System.out.printf("Multiplying was faster by ");
+			System.out.printf("%.3f", 100*(-1 + shiftingD/multiplyingD));
+			System.out.print(" %");
+		}
+	}
+	
 	public static void main(String[] args) {
 		
 		// We instantiate 2 objects of the class
@@ -97,18 +106,25 @@ public class J015CompareSpeed {
 		// We fill array of each object with data
 		arrForBits.fillArrayWithData(arrForBits.i);
 		arrForMultiplying.fillArrayWithData(arrForMultiplying.i);
+		
+		final long BEFORE_OPERATIONS = System.currentTimeMillis();
 
 		// Bitwise shifting:
 		System.out.println("Start shifting...");
 		arrForBits.shiftLeft(arrForBits.i);
 		
+		shiftingTook = System.currentTimeMillis() - BEFORE_OPERATIONS;
+		
 		// Multiplying:
 		System.out.println("Start multiplying...");
 		arrForMultiplying.multiply(arrForMultiplying.i);
 		
-		System.out.println("Done");
-		System.out.println("arrForBits: i[23]= " + "\t" + arrForBits.i[23]);
-		System.out.println("arrForMultiplying: i[23]= " + "\t" + arrForMultiplying.i[23]);
+		// Outcome
+		multiplyingTook = System.currentTimeMillis() - BEFORE_OPERATIONS - shiftingTook;
+		System.out.printf("%-25s%-7s%-4s%n", "Bitwise shifting took:", shiftingTook, " ms");
+		System.out.printf("%-25s%-7s%-4s%n", "Multiplying took:", multiplyingTook, " ms");
+		
+		outcome();
 	}
 }	
 
