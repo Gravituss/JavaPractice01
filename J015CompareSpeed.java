@@ -91,7 +91,7 @@ public class J015CompareSpeed {
 			System.out.printf("%.3f", 100*(-1 + multiplyingD/shiftingD));
 			System.out.print(" %");
 		} else {
-			System.out.printf("Multiplying was faster by ");
+			System.out.print("Multiplying was faster by ");
 			System.out.printf("%.3f", 100*(-1 + shiftingD/multiplyingD));
 			System.out.print(" %");
 		}

@@ -8,3 +8,4 @@ This repository inculdes:
 By now, the third cathegory includes:
 - J006ArrayReversal.java
 - J007CurrencyExchange.java
+- J015CompareSpeed.java
