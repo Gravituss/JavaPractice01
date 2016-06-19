@@ -9,5 +9,8 @@ public class J020HashC {
 		J020HashC objectJ = new J020HashC();
 		System.out.println(objectJ.hashCode());
 		System.out.println(objectJ.inn.hashCode());
+		
+		System.out.println(objectJ.toString());
+		System.out.println(objectJ.inn.toString());
 	}
 }
